@@ -1,0 +1,837 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<style>
+
+    .chart-container {
+        width: 60%;
+        max-width: 700px;
+        margin: 20px auto;
+        background: #2a2a3c;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .divider {
+        width: 50px;
+        height: 3px;
+        background: #ffc107;
+        margin: 10px auto;
+    }
+
+    .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 15px;
+        right: 15px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .whatsapp-float svg {
+        fill: white;
+    }
+    
+    .whatsapp-float:hover {
+        background-color: #25d366;
+        color: white;
+    }
+    
+     
+      
+</style>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8' />
+    <title>Vulnerabilidades - Carlos Andres Loaiza Ruiz</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'vulnerabilities/logo_col_2.png' %}" />
+    <meta name="theme-color" content="#ffffff">
+    <meta name="title" content="Vulnerabilidades - Carlos Andres Loaiza Ruiz">
+    <meta name="subject" content="Vulnerabilidades - Colombia">
+    <meta name="author" content="Carlos Andres Loaiza Ruiz">
+    <meta name="robots" content="index, follow" />
+    <meta name="revisit-after" content="1 day">
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Carlos Andres Loaiza Ruiz" />
+    <meta property="og:url" content="https://nextpyme.plus/#features" />
+    <meta property="og:site_name" content="Vulnerabilidades - Carlos Andres Loaiza Ruiz" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="{% static 'vulnerabilities/logo_col_2.png' %}" />
+    <link href="{% static 'vulnerabilities/logo_col_2.png' %}" rel="apple-touch-icon">
+    
+    <!--Plugins Styles-->
+    <link rel="stylesheet" href="https://nextpyme.plus/css/new_desing/aos.css">
+    <link rel="stylesheet" href="https://nextpyme.plus/css/new_desing/lightgallery.min.css">
+    <link rel="stylesheet" href="https://nextpyme.plus/css/new_desing/flickity.min.css">
+
+    <!--Styles-->
+    <link rel="stylesheet" href="https://nextpyme.plus/css/new_desing/theme.css">
+    
+        <!-- <link rel="canonical" href="https://onekit.madethemes.com"> -->
+    <meta name="theme-color" content="#5b2be0">
+    <link rel="apple-touch-icon" href="src/img-min/logo/apple-icon.png">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '455019139505496');
+        fbq('track', 'PageView');
+    </script><noscript> <img height="1" width="1"
+            src="https://www.facebook.com/tr?id=455019139505496&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+
+<body>
+
+    <!-- progress scroll -->
+    <progress id="progress-bar" class="progress-one text-blue" max="100">
+        <span class="progress-container">
+            <span class="progress-bar" style="color: #0072ff !important"></span>
+        </span>
+    </progress>
+
+
+    <!-- ========== { HEADER }==========  -->
+    <header>
+        <!-- Navbar -->
+        <nav class="main-nav navbar navbar-expand-lg hover-navbar dark-to-light fixed-top navbar-dark">
+            <div class="container">
+                <a class="navbar-brand main-logo" target="_blank" href="https://github.com/Andreslruiz">
+                    <span class="h3 fw-bold mt-2 logo-light text-light">Carlos Andres Loaiza Ruiz</span>
+                </a>
+                <!-- navbar toggler -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                                    <!-- collapse menu -->
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-warning btn-sm text-dark" target="_blank" href="https://github.com/Andreslruiz">
+                                    <strong>GitHub</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </div><!-- end collapse menu -->
+                            </div>
+        </nav><!-- End Navbar -->
+    </header>
+    <!-- end header -->
+
+    
+    <main id="main">
+            <!-- =========={ MAIN }==========  -->
+    <main id="content">
+        <!-- =========={ HERO }==========  -->
+        <div id="hero" class="section bg-gradient-primary py-8 py-lg-9 overflow-hidden">
+            <!-- background overlay -->
+            <div class="overlay opacity-90 z-index-n1" style="background: linear-gradient(180deg, #007bff, #0056b3);"></div>
+
+            <!--color del tema-->
+
+            <!-- rocket moving up animation -->
+            <div class="particle">
+
+    <div class="particle-move-up d-none d-lg-block particle-move-up-1 text-light z-index-n1 opacity-60">
+        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-wrench-adjustable-circle-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M10.854 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+            <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+            <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+        </svg>
+    </div>
+    <div class="particle-move-up particle-move-up-2 text-light z-index-n1 opacity-60">
+        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+        </svg>
+    </div>
+
+    <div class="particle-move-up d-none d-xl-block particle-move-up-4 text-light z-index-n1 opacity-60">
+        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+        <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z"/>
+        <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z"/>
+        </svg>
+    </div>
+    <div class="particle-move-up d-none d-sm-block particle-move-up-3 text-light z-index-n1 opacity-60">
+        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-hammer" viewBox="0 0 16 16">
+            <path d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.18.18 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.18.18 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.18.18 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.18.18 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.18.18 0 0 0 .134-.098z"/>
+        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+        </svg>
+    </div>
+    <div class="particle-move-up d-none d-sm-block particle-move-up-5 text-light z-index-n1 opacity-60">
+        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+            <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0z"/>
+        </svg>
+    </div>
+    <div class="particle-move-up border-success text-light particle-move-up-6 z-index-n1 opacity-60">
+        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-nut-fill" viewBox="0 0 16 16">
+            <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702z"/>
+            <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z"/>
+        </svg>
+    </div>
+
+    <div class="particle-move-up particle-move-up-7 z-index-n1 text-light opacity-60">
+        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+            <path d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/>
+            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5M12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0m2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0M1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25"/>
+        </svg>
+    </div>
+    <div class="particle-move-up particle-move-up-8 z-index-n1 text-light opacity-60">
+        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-buildings-fill" viewBox="0 0 16 16">
+            <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z"/>
+        </svg>
+    </div>
+    <div class="particle-move-up particle-move-up-9 z-index-n1 text-light opacity-60">
+        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-ladder" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002H7.971L6.072 5.385v1.271l1.834-1.318h.065V12h1.312z"/>
+        </svg>
+    </div>
+</div>
+            <!-- scribble -->
+            <figure class="scribble scale-4 opacity-10 top-50 start-0 z-index-n1" data-aos="fade-up-right"
+                data-aos-delay="300">
+                <svg class="text-secondary" width="200" height="200" viewBox="0 0 200 200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor"
+                        d="M42.5,-66.2C57.1,-56.7,72.5,-48.4,81.1,-35.3C89.8,-22.2,91.8,-4.4,89.6,13C87.3,30.4,80.7,47.4,69.5,60.1C58.3,72.9,42.4,81.5,25.9,84.6C9.5,87.8,-7.4,85.4,-22.7,79.8C-37.9,74.1,-51.5,65.2,-60.9,53.3C-70.4,41.4,-75.8,26.6,-79,10.8C-82.1,-5,-83.1,-21.7,-77.7,-36.4C-72.4,-51,-60.7,-63.7,-46.7,-73.5C-32.7,-83.3,-16.4,-90.1,-1.2,-88.2C13.9,-86.3,27.8,-75.7,42.5,-66.2Z"
+                        transform="translate(100 100)" />
+                </svg>
+            </figure>
+
+            <!-- scribble -->
+            <figure class="scribble scale-5 opacity-10 top-50 start-0 z-index-n1" data-aos="fade-up-right"
+                data-aos-delay="200">
+                <svg class="text-secondary" width="200" height="200" viewBox="0 0 200 200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor"
+                        d="M42.5,-66.2C57.1,-56.7,72.5,-48.4,81.1,-35.3C89.8,-22.2,91.8,-4.4,89.6,13C87.3,30.4,80.7,47.4,69.5,60.1C58.3,72.9,42.4,81.5,25.9,84.6C9.5,87.8,-7.4,85.4,-22.7,79.8C-37.9,74.1,-51.5,65.2,-60.9,53.3C-70.4,41.4,-75.8,26.6,-79,10.8C-82.1,-5,-83.1,-21.7,-77.7,-36.4C-72.4,-51,-60.7,-63.7,-46.7,-73.5C-32.7,-83.3,-16.4,-90.1,-1.2,-88.2C13.9,-86.3,27.8,-75.7,42.5,-66.2Z"
+                        transform="translate(100 100)" />
+                </svg>
+            </figure>
+
+            <!-- scribble -->
+            <figure class="scribble scale-6 opacity-10 top-50 start-0 z-index-n1" data-aos="fade-up-right"
+                data-aos-delay="100">
+                <svg class="text-secondary" width="200" height="200" viewBox="0 0 200 200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor"
+                        d="M42.5,-66.2C57.1,-56.7,72.5,-48.4,81.1,-35.3C89.8,-22.2,91.8,-4.4,89.6,13C87.3,30.4,80.7,47.4,69.5,60.1C58.3,72.9,42.4,81.5,25.9,84.6C9.5,87.8,-7.4,85.4,-22.7,79.8C-37.9,74.1,-51.5,65.2,-60.9,53.3C-70.4,41.4,-75.8,26.6,-79,10.8C-82.1,-5,-83.1,-21.7,-77.7,-36.4C-72.4,-51,-60.7,-63.7,-46.7,-73.5C-32.7,-83.3,-16.4,-90.1,-1.2,-88.2C13.9,-86.3,27.8,-75.7,42.5,-66.2Z"
+                        transform="translate(100 100)" />
+                </svg>
+            </figure>
+
+            <!-- scribble -->
+            <figure class="scribble scale-7 opacity-10 top-50 start-0 z-index-n1" data-aos="fade-up-right">
+                <svg class="text-secondary" width="200" height="200" viewBox="0 0 200 200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor"
+                        d="M42.5,-66.2C57.1,-56.7,72.5,-48.4,81.1,-35.3C89.8,-22.2,91.8,-4.4,89.6,13C87.3,30.4,80.7,47.4,69.5,60.1C58.3,72.9,42.4,81.5,25.9,84.6C9.5,87.8,-7.4,85.4,-22.7,79.8C-37.9,74.1,-51.5,65.2,-60.9,53.3C-70.4,41.4,-75.8,26.6,-79,10.8C-82.1,-5,-83.1,-21.7,-77.7,-36.4C-72.4,-51,-60.7,-63.7,-46.7,-73.5C-32.7,-83.3,-16.4,-90.1,-1.2,-88.2C13.9,-86.3,27.8,-75.7,42.5,-66.2Z"
+                        transform="translate(100 100)" />
+                </svg>
+            </figure>
+
+            <div class="container">
+                <!-- row -->
+                <div class="row justify-content-center mb-5">
+                    <!-- hero content -->
+                    <div class="col-md-9 col-lg-12 mt-5 align-self-center pe-lg-5" data-aos="flip-up">
+                        <div class="text-center text-lg-start mt-4 mt-lg-0">
+                            <div class="mb-5">
+                                <h1 class="display-4 fw-bold text-white mb-3">
+                                    <span class="text-white">Prueba tecnica - Desarrollador Full Stack EMTELCO </span>
+                                    <span class="text-warning">Colombia</span><br>
+                                    <span class="display-6" 
+                                        data-toggle="typed" 
+                                        data-options='{"strings": ["Docker", "Python", "Django", "Gestión de Vulnerabilidades", "Seguridad en la Nube", "Monitoreo de Riesgos", "Automatización de Auditorías", "Integración con APIs", "Despliegue en la Nube"]}'>
+                                    </span>
+                                </h1>
+                                <p class="lead text-light" style="opacity:0;">.</p>
+                                <p class="lead text-light" style="opacity:0;">.</p>
+                                <p class="lead text-light" style="opacity:0;">.</p>
+                                <p class="lead text-light" style="opacity:0;">.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div><!-- end row -->
+            </div>
+
+            <!-- waves start -->
+            <figure class="waves-bottom-center text-light mb-lg-n4 z-index-n1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path class="opacity-20 translate-top-2" fill="currentColor" fill-opacity="1"
+                        d="M0,160L60,186.7C120,213,240,267,360,245.3C480,224,600,128,720,106.7C840,85,960,139,1080,149.3C1200,160,1320,128,1380,112L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                    </path>
+                    <path class="opacity-30 translate-top-1" fill="currentColor" fill-opacity="1"
+                        d="M0,160L60,186.7C120,213,240,267,360,245.3C480,224,600,128,720,106.7C840,85,960,139,1080,149.3C1200,160,1320,128,1380,112L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                    </path>
+                    <path fill="currentColor" fill-opacity="1"
+                        d="M0,160L60,186.7C120,213,240,267,360,245.3C480,224,600,128,720,106.7C840,85,960,139,1080,149.3C1200,160,1320,128,1380,112L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                    </path>
+                </svg>
+            </figure>
+        </div><!-- end hero -->
+
+        <!-- =========={ FEATURES }==========  -->
+        <div id="features" class="section pt-5 pb-4 pb-md-5 bg-light">
+            <div class="container">
+                <div class="position-relative">
+                    <!-- scribble -->
+                    <figure class="scribble scale-2 d-none d-md-block top-0 end-0 mt-md-n4 mt-lg-n7 me-lg-7 z-index-n1">
+                        <svg class="text-secondary opacity-90" width="76" height="72"
+                            viewBox="0 0 193.000000 184.000000" xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(0.000000,184.000000) scale(0.100000,-0.100000)" fill="currentColor"
+                                stroke="none">
+                                <path d="M633 1723 c-3 -10 -19 -51 -35 -91 -33 -84 -34 -103 -10 -124 28 -24
+                                53 -29 88 -18 35 12 55 48 48 91 -2 13 -6 46 -9 72 -9 69 -65 117 -82 70z">
+                                </path>
+                                <path d="M1330 1613 c-27 -54 -49 -107 -48 -117 5 -37 47 -55 111 -47 80 10
+                                84 16 69 103 -15 85 -45 158 -66 158 -9 0 -36 -40 -66 -97z">
+                                </path>
+                                <path d="M973 1513 c-3 -10 -21 -54 -39 -98 -40 -95 -41 -109 -12 -129 29 -20
+                                143 -22 151 -3 6 16 1 48 -19 139 -20 86 -65 137 -81 91z">
+                                </path>
+                                <path d="M261 1328 c-5 -13 -21 -49 -35 -81 -32 -72 -33 -92 -2 -113 32 -20
+                                134 -10 144 14 10 28 -27 145 -55 174 -32 34 -41 35 -52 6z">
+                                </path>
+                                <path d="M605 1306 c-8 -19 -20 -66 -26 -106 -15 -91 -6 -103 79 -103 32 0 64
+                                3 71 8 19 11 9 72 -23 142 -46 100 -77 118 -101 59z">
+                                </path>
+                                <path d="M1319 1253 c-7 -15 -29 -66 -50 -111 -22 -46 -39 -89 -39 -96 0 -7
+                                11 -23 25 -36 22 -20 27 -22 55 -10 16 7 39 10 49 7 11 -3 28 1 37 8 16 11 17
+                                21 6 111 -16 129 -57 192 -83 127z">
+                                </path>
+                                <path d="M1680 1058 c-5 -13 -25 -63 -45 -113 -20 -49 -38 -95 -41 -102 -5
+                                -10 9 -27 48 -59 22 -18 124 -27 148 -14 18 9 21 18 17 43 -12 70 -48 204 -63
+                                235 -20 38 -50 42 -64 10z">
+                                </path>
+                                <path d="M903 901 c-27 -81 -28 -92 -16 -116 9 -17 20 -25 30 -21 8 3 29 6 47
+                                6 18 0 41 6 51 14 17 12 18 17 6 57 -54 181 -74 191 -118 60z">
+                                </path>
+                                <path d="M141 913 c-15 -30 -41 -125 -41 -153 0 -50 74 -87 114 -57 19 14 19
+                                20 8 102 -11 86 -29 125 -58 125 -7 0 -17 -8 -23 -17z">
+                                </path>
+                                <path d="M1324 813 c-4 -16 -17 -49 -30 -75 -28 -56 -29 -75 -6 -105 15 -20
+                                23 -21 67 -15 47 7 50 9 53 38 3 35 -24 152 -40 172 -17 20 -37 14 -44 -15z">
+                                </path>
+                                <path d="M537 688 c-20 -46 -37 -90 -37 -99 0 -22 26 -43 45 -35 8 3 15 1 15
+                                -4 0 -15 43 -12 84 5 43 18 45 34 15 123 -19 57 -47 92 -74 92 -6 0 -28 -37
+                                -48 -82z">
+                                </path>
+                                <path d="M995 620 c-7 -11 -55 -186 -55 -199 0 -17 42 -51 63 -51 42 0 96 21
+                                101 38 6 19 -29 135 -58 190 -16 32 -39 41 -51 22z">
+                                </path>
+                                <path d="M1379 330 c-25 -77 -31 -105 -23 -118 11 -18 56 -36 116 -47 32 -6
+                                36 -4 42 18 7 30 -20 180 -40 219 -10 18 -22 28 -38 28 -20 0 -27 -12 -57
+                                -100z">
+                                </path>
+                                <path d="M566 290 c-20 -51 -30 -113 -22 -144 7 -29 49 -46 112 -46 44 0 44 0
+                                44 35 0 40 -41 149 -67 177 -26 29 -49 22 -67 -22z">
+                                </path>
+                            </g>
+                        </svg>
+                    </figure>
+                </div>
+                <!-- section header -->
+            </div>
+        </div>
+        <!-- End features -->
+        <div id="reviews" class="section bg-light-dark">
+                <div id="partner-brand" class="section bg-light-dark pt-5">
+                    <div class="container">
+                        <header class="text-center mx-auto mb-5">
+                            <h2 class="h3 fw-bold">Tecnologias Utilizadas la Prueba</h2>
+                            <hr class="divider my-4 bg-warning border-warning">
+
+                        </header>
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- list brand -->
+                                <ul class="list-unstyled row justify-content-center">
+                                                                            <li class="col-12 col-sm-6 col-md-4 col-lg-2 px-4 mb-5 text-center">
+                                            <div class="aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+                                                <!-- service block -->
+                                                <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+                                                    <div class="display-4 text-primary mb-2">
+                                                        <!-- icon -->
+                                                        <img src="https://cdn.iconscout.com/icon/free/png-256/free-python-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-5-pack-logos-icons-2945099.png"
+                                                            width="50" alt="Node">
+                                                    </div>
+                                                    <p class="h6">Python</p>
+                                                </div><!-- end service block -->
+                                            </div>
+                                        </li>
+                                                                            <li class="col-12 col-sm-6 col-md-4 col-lg-2 px-4 mb-5 text-center">
+                                            <div class="aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+                                                <!-- service block -->
+                                                <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+                                                    <div class="display-4 text-primary mb-2">
+                                                        <!-- icon -->
+                                                        <img src="https://static-00.iconduck.com/assets.00/django-icon-1606x2048-lwmw1z73.png"
+                                                            width="50" alt="Ruby">
+                                                    </div>
+                                                    <p class="h6">Django</p>
+                                                </div><!-- end service block -->
+                                            </div>
+                                        </li>
+                                                                            <li class="col-12 col-sm-6 col-md-4 col-lg-2 px-4 mb-5 text-center">
+                                            <div class="aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+                                                <!-- service block -->
+                                                <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+                                                    <div class="display-4 text-primary mb-2">
+                                                        <!-- icon -->
+                                                        <img src="https://media2.dev.to/dynamic/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpdlelneo05ui6m4l1cqj.png"
+                                                            width="50" alt="PHP">
+                                                    </div>
+                                                    <p class="h6">DRF</p>
+                                                </div><!-- end service block -->
+                                            </div>
+                                        </li>
+                                                                            <li class="col-12 col-sm-6 col-md-4 col-lg-2 px-4 mb-5 text-center">
+                                            <div class="aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+                                                <!-- service block -->
+                                                <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+                                                    <div class="display-4 text-primary mb-2">
+                                                        <!-- icon -->
+                                                        <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png"
+                                                            width="50" alt="GO">
+                                                    </div>
+                                                    <p class="h6">Docker</p>
+                                                </div><!-- end service block -->
+                                            </div>
+                                        </li>
+                                                                            <li class="col-12 col-sm-6 col-md-4 col-lg-2 px-4 mb-5 text-center">
+                                            <div class="aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+                                                <!-- service block -->
+                                                <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+                                                    <div class="display-4 text-primary mb-2">
+                                                        <!-- icon -->
+                                                        <img src="https://cdn.iconscout.com/icon/free/png-256/free-mysql-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-5-pack-logos-icons-3030165.png"
+                                                            width="50" alt="Java">
+                                                    </div>
+                                                    <p class="h6">MySQL</p>
+                                                </div><!-- end service block -->
+                                            </div>
+                                        </li>
+                                                                            <li class="col-12 col-sm-6 col-md-4 col-lg-2 px-4 mb-5 text-center">
+                                            <div class="aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+                                                <!-- service block -->
+                                                <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+                                                    <div class="display-4 text-primary mb-2">
+                                                        <!-- icon -->
+                                                        <img src="https://miro.medium.com/v2/resize:fit:2400/1*j7jzC9ErvRM9QEs7nOsbhA.png"
+                                                            width="50" alt="Python">
+                                                    </div>
+                                                    <p class="h6">Cloud</p>
+                                                </div><!-- end service block -->
+                                            </div>
+                                        </li>
+                                    </ul><!-- end list brand -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Reviews -->
+
+
+        <!-- =========={ SUBCRIBE }==========  -->
+        <div id="features" class="section bg-light">
+            <div class="container">
+                <header class="text-center mx-auto mb-5">
+                    <h2 class="h3 fw-bold">Características de la prueba</h2>
+                    <hr class="divider my-4 bg-warning border-warning">
+                </header>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <header class="text-center mx-auto mb-5">
+                            <p class="lead text-muted">Esta prueba consiste en desarrollar una API REST en Django REST Framework para gestionar vulnerabilidades de seguridad en una infraestructura Cloud, integrando información de los CVEs del NIST.</p>
+                        </header>
+                        <div class="card p-4 shadow-sm">
+                            <ul class="list-unstyled">
+                                <li>✅ <strong>Gestión de Vulnerabilidades:</strong> Obtención y filtrado de vulnerabilidades desde la API del NIST.
+                                </li>
+                                <li>✅ <strong>Endpoints RESTful:</strong>
+                                    <ul>
+                                        <li>📌 <strong>GET</strong> – Listado de todas las vulnerabilidades.</li>
+                                        <li>📌 <strong>POST</strong> – Registro de vulnerabilidades solucionadas.</li>
+                                        <li>📌 <strong>GET</strong> – Listado excluyendo las vulnerabilidades solucionadas.</li>
+                                        <li>📌 <strong>GET</strong> – Resumen por severidad.</li>
+                                        <li>📌 <strong>DELETE</strong> – Eliminación de vulnerabilidades.</li>
+                                    </ul>
+                                </li>
+                                <li>✅ <strong>Dockerización:</strong> La aplicación se ejecuta en un entorno dockerizado.</li>
+                                <li>✅ <strong>Repositorio en GitHub:</strong> Código organizado, documentación y configuración para despliegue.</li>
+                                <li>✅ <strong>Testing:</strong> Implementación de pruebas para validar la funcionalidad de la API.</li>
+                                <li>✅ <strong>Autenticación y Seguridad:</strong> Protección de endpoints mediante autenticación.</li>
+                                <li>✅ <strong>Logs y Auditoría:</strong> Registro de interacciones con la API.</li>
+                                <li>✅ <strong>Despliegue en la Nube:</strong> Implementación en DigitalOcean para acceso.</li>
+                                <li>✅ <strong>Documentación Completa:</strong> Instrucciones detalladas en README.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <div id="reviews" class="section bg-light-dark">
+            <div id="partner-brand" class="section bg-light-dark pt-5">
+                <div class="container">
+                    <header class="text-center mx-auto mb-5">
+                        <h2 class="h3 fw-bold">Visualización de datos (Consumo APIs)</h2>
+                        <hr class="divider my-4 bg-warning border-warning">
+                    </header>
+        
+                    <div class="chart-container">
+                        <h3 class="text-center text-white">📈 Tendencia de Vulnerabilidades</h3>
+                        <p class="text-center text-white">Muestra la evolución de las vulnerabilidades detectadas según su severidad.</p>
+                        <canvas id="chartVulnerabilities"></canvas>
+                    </div>
+        
+                    <div class="chart-container">
+                        <h3 class="text-center text-white">📊 Vulnerabilidades No Corregidas</h3>
+                        <p class="text-center text-white">Cantidad de vulnerabilidades aún pendientes de corrección, categorizadas por severidad.</p>
+                        <canvas id="chartUnfixed"></canvas>
+                    </div>
+        
+                    <div class="chart-container">
+                        <h3 class="text-center text-white">🥧 Distribución de Vulnerabilidades</h3>
+                        <p class="text-center text-white">Proporción de vulnerabilidades registradas según su severidad.</p>
+                        <canvas id="chartSummary"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    </main>
+    <!-- end main -->
+    </main>
+    
+    
+
+    <footer class="bg-light" style="font-size: 14px !important">
+    <!--Footer content-->
+    <div id="footer" class="footer-light border-top section pt-6 pb-5">
+        <div class="container">
+            <div class="row">
+                <!-- left widget -->
+                <div class="col-lg-4">
+                    <!-- Footer Content -->
+                    <div class="widget-content pe-lg-5">
+                        <!-- Footer Title -->
+                        <h4 class="h5 mb-4">Quienes soy?</h4>
+                        <div class="widget-body">
+                            <p>
+                                Ingeniero Electrónico y Especialista en Programación Aplicada, con 6+ años de experiencia en desarrollo de software. Actualmente estudiante de Maestría en IA, apasionado por soluciones tecnológicas escalables y eficientes.
+
+Dominio en Python, Django, Flask, JavaScript, TypeScript, Node, SQL/NoSQL, Laravel y experiencia en infraestructura, automatización, scraping e integración de sistemas.
+
+Experto en Cloud Computing (AWS, GCP), Docker, Kubernetes, CI/CD, seguridad informática y optimización de código. Habilidad para liderar proyectos en IA, machine learning, automatización y desarrollo full-stack.
+
+🔹 Fuerte enfoque en calidad, innovación y rendimiento. Listo para asumir nuevos retos 🚀.
+                            </p>
+                            <address>
+                                <!-- <i class="fa fa-map-marker-alt me-2"></i> -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem"
+                                    viewBox="0 0 512 512">
+                                    <path fill="currentColor"
+                                        d="M256,48c-79.5,0-144,61.39-144,137,0,87,96,224.87,131.25,272.49a15.77,15.77,0,0,0,25.5,0C304,409.89,400,272.07,400,185,400,109.39,335.5,48,256,48Z"
+                                        style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
+                                    <circle fill="currentColor" cx="256" cy="192" r="48"
+                                        style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
+                                </svg>
+                                Manizales, Colombia
+                                Cll 11 #35-12
+                            </address>
+                            <p class="footer-info">                                
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem"
+                                    viewBox="0 0 512 512">
+                                    <path fill="currentColor"
+                                        d="M451,374c-15.88-16-54.34-39.35-73-48.76C353.7,313,351.7,312,332.6,326.19c-12.74,9.47-21.21,17.93-36.12,14.75s-47.31-21.11-75.68-49.39-47.34-61.62-50.53-76.48,5.41-23.23,14.79-36c13.22-18,12.22-21,.92-45.3-8.81-18.9-32.84-57-48.9-72.8C119.9,44,119.9,47,108.83,51.6A160.15,160.15,0,0,0,83,65.37C67,76,58.12,84.83,51.91,98.1s-9,44.38,23.07,102.64,54.57,88.05,101.14,134.49S258.5,406.64,310.85,436c64.76,36.27,89.6,29.2,102.91,23s22.18-15,32.83-31a159.09,159.09,0,0,0,13.8-25.8C465,391.17,468,391.17,451,374Z"
+                                        style="fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:32px" />
+                                </svg>
+                                <a href="tel:+573017882489">+(57) 321 335 8263</a>
+                            </p>
+                            <p class="footer-info">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                                <a href="https://api.whatsapp.com/send?phone=+573213358263&text=Hola Carlos Andres👋 te cuento que estoy revisando tu prueba tecnica para Desarrollador Full Stack en EMTELCO!🚀" target="_blank">+(57) 321 335 8263</a>
+                            </p>
+                            <p class="footer-info">
+                                <!-- <i class="fa fa-envelope me-2"></i> -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem"
+                                    viewBox="0 0 512 512">
+                                    <rect fill="currentColor" x="48" y="96" width="416" height="320" rx="40" ry="40"
+                                        style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
+                                    <polyline fill="currentColor" points="112 160 256 272 400 160"
+                                        style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
+                                </svg>
+                                <a href="serviciodetransportevertical@gmail.com">ing.andreslruiz@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>                
+
+                <div class="widget col-md-6 col-lg-4">                    
+                    <div class="widget-content">                        
+                        <h4 class="h5 mb-4">Redes sociales</h4>
+                        <p>¡Te comparto mis redes sociales!</p>                    
+
+                        <div class="my-1"></div>
+                        <ul class="footer-links list-unstyled social-icon mb-4">
+                            <!--facebook-->
+                            <li class="my-2 me-3">
+                                <a target="_blank" rel="noopener noreferrer" href="https://web.facebook.com/andresloaizar"
+                                    title="Facebook">
+                                    <!-- <i class="fab fa-facebook fa-2x"></i> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem"
+                                        viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z" />
+                                    </svg>
+                                </a>
+                            </li>  
+                            <li class="my-2 me-3">
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/andreslruiz_" title="Instagram">
+                                    <!-- <i class="fab fa-instagram fa-2x"></i> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                                      </svg>
+                                </a>
+                            </li>
+                                                 
+                            <!--youtube-->
+                            <li class="my-2 me-3">
+                                <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=+573213358263&text=Hola Carlos Andres👋 te cuento que estoy revisando tu prueba tecnica para Desarrollador Full Stack en EMTELCO!🚀" title="Whatsapp">                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                                      </svg>
+                                </a>
+                            </li>                                                       
+                        </ul>
+                    </div><!-- End Footer Content -->
+                </div><!-- end right -->
+            </div>
+        </div>
+    </div>
+    <!--End footer content-->
+
+    <!--Start footer copyright-->
+    <div class="footer-light">
+        <div class="container mt-1 border-top border-smooth-light">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="d-block my-2"><small>Copyright &copy; Carlos Andres Loaiza Ruiz | Todos los derechos reservados.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End footer copyright-->
+</footer><!-- End Footer -->
+
+    <!-- End #main -->
+    <!-- =========={ SCROLL TO TOP }==========  -->
+    <a href="#top" class="p-3 border position-fixed end-1 bottom-1 z-index-10 back-top" title="Scroll To Top">
+        <!-- <i class="fas fa-arrow-up"></i> -->
+        <svg class="bi bi-arrow-up" width="1rem" height="1rem" viewBox="0 0 16 16" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v9a.5.5 0 01-1 0V4a.5.5 0 01.5-.5z" clip-rule="evenodd">
+            </path>
+            <path fill-rule="evenodd"
+                d="M7.646 2.646a.5.5 0 01.708 0l3 3a.5.5 0 01-.708.708L8 3.707 5.354 6.354a.5.5 0 11-.708-.708l3-3z"
+                clip-rule="evenodd"></path>
+        </svg>
+    </a>
+
+    <a href="https://api.whatsapp.com/send?phone=+573213358263&text=Hola Carlos Andres👋 te cuento que estoy revisando tu prueba tecnica para Desarrollador Full Stack en EMTELCO!🚀"
+        class="whatsapp-float" 
+        target="_blank" 
+        rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 32 32" 
+                width="2.5rem" 
+                height="2.5rem">
+            <path fill="currentColor" d="M16.027 2.003c-7.72 0-13.997 6.268-13.997 13.983 0 2.467.648 4.9 1.867 7.042l-2.034 7.105 7.312-1.918a14.053 14.053 0 0 0 6.852 1.754c7.719 0 13.996-6.268 13.996-13.983 0-7.716-6.278-13.983-13.996-13.983zm8.207 20.534c-.344.966-2.033 1.867-2.842 1.936-.723.057-1.648.339-5.666-1.179-4.769-1.878-7.793-6.72-8.041-7.04-.299-.398-1.923-2.542-1.923-4.854s1.211-3.45 1.648-3.937c.38-.435.838-.544 1.114-.544.272 0 .558.003.797.015.251.012.594-.095.928.699.344.812 1.188 2.937 1.294 3.149.104.211.175.463.03.744-.139.281-.209.45-.406.694s-.431.492-.618.663c-.209.197-.429.41-.185.807.243.398 1.08 1.776 2.318 2.877 1.594 1.421 2.927 1.869 3.314 2.081.388.211.615.179.846-.104.231-.272 1.097-1.272 1.39-1.709.291-.435.584-.362.979-.209.398.151 2.529 1.195 2.963 1.412.435.218.723.326.83.51.104.178.104 1.017-.242 1.983z"/>
+        </svg>
+    </a>
+
+
+    <!-- =========={ JAVASCRIPT }==========  -->
+    <!-- Popper and Bootstrap js -->
+    <script src="https://nextpyme.plus/js/new_desing/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin js -->
+    <script src="https://nextpyme.plus/js/new_desing/jarallax.min.js"></script>
+    <script src="https://nextpyme.plus/js/new_desing/jarallax-video.min.js"></script>
+
+    <script src="https://nextpyme.plus/js/new_desing/lightgallery.min.js"></script>
+    <script src="https://nextpyme.plus/js/new_desing/lg-thumbnail.min.js"></script>
+    <script src="https://nextpyme.plus/js/new_desing/lg-video.js"></script>
+
+    <script src="https://nextpyme.plus/js/new_desing/aos.js"></script>
+    <script src="https://nextpyme.plus/js/new_desing/noframework.waypoints.min.js"></script>
+    <script src="https://nextpyme.plus/js/new_desing/index.js"></script>
+    <script src="https://nextpyme.plus/js/new_desing/flickity.pkgd.min.js"></script>
+    <script src="https://nextpyme.plus/js/new_desing/typed.min.js"></script>
+    <script src="https://nextpyme.plus/js/new_desing/isotope.pkgd.min.js"></script>
+    <script src="https://nextpyme.plus/js/new_desing/smooth-scroll.polyfills.min.js"></script>
+    <script src="https://nextpyme.plus/js/new_desing/lazyload.min.js"></script>
+    <script src="https://nextpyme.plus/js/new_desing/hc-sticky.js"></script>
+    <!-- Theme js -->
+    <script src="https://nextpyme.plus/js/new_desing/theme.js"></script>
+
+    </script>
+    <!--End of Tawk.to Script-->
+    <!--End of Tawk.to Script-->
+    <!--End of Tawk.to Script-->
+    </body>
+
+</html>
+
+<script>
+    const token = "7548eed0cdfde78a43b856fd25b5ca6bdfab3fc9";
+
+    async function fetchData(endpoint) {
+        try {
+            const response = await fetch(`api/${endpoint}/`, {
+                headers: {
+                    "Authorization": `Token ${token}`,
+                    "Content-Type": "application/json"
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            return await response.json();
+        } catch (error) {
+            console.error(`Error fetching ${endpoint}:`, error);
+            return null;
+        }
+    }
+
+    // 📈 Gráfico de Líneas - Tendencia de Vulnerabilidades
+    async function renderVulnerabilitiesChart() {
+        const data = await fetchData("vulnerabilities");
+        if (!data) return;
+
+        const labels = data.slice(0, 50).map(v => v.cve_id); // Tomamos solo los primeros 50 para evitar sobrecarga
+        const severities = data.slice(0, 50).map(v => v.severity === "HIGH" ? 3 : v.severity === "MEDIUM" ? 2 : 1);
+
+        new Chart(document.getElementById("chartVulnerabilities"), {
+            type: "line",
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Severidad (1=LOW, 2=MEDIUM, 3=HIGH)",
+                    data: severities,
+                    backgroundColor: "rgba(255, 99, 132, 0.2)",
+                    borderColor: "#FF6384",
+                    borderWidth: 2,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true, max: 3 }
+                }
+            }
+        });
+    }
+
+    // 📊 Gráfico de Barras - Vulnerabilidades sin Corregir
+    async function renderUnfixedChart() {
+        const data = await fetchData("vulnerabilities-unfixed");
+        if (!data) return;
+
+        const severities = { HIGH: 0, MEDIUM: 0, LOW: 0, Unknown: 0 };
+        data.forEach(v => severities[v.severity]++);
+
+        new Chart(document.getElementById("chartUnfixed"), {
+            type: "bar",
+            data: {
+                labels: ["Alta", "Media", "Baja", "Desconocida"],
+                datasets: [{
+                    label: "Cantidad",
+                    data: [severities.HIGH, severities.MEDIUM, severities.LOW, severities.Unknown],
+                    backgroundColor: ["#ff3d67", "#ff9f40", "#36a2eb", "#6c757d"],
+                    borderColor: "#fff",
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    }
+
+    // 🥧 Gráfico de Pastel - Resumen de Vulnerabilidades
+    async function renderSummaryChart() {
+        const data = await fetchData("vulnerabilities-summary");
+        if (!data) return;
+
+        const severities = { HIGH: 0, MEDIUM: 0, LOW: 0, Unknown: 0 };
+        data.forEach(v => severities[v.severity] = v.total);
+
+        new Chart(document.getElementById("chartSummary"), {
+            type: "doughnut",
+            data: {
+                labels: ["Alta", "Media", "Baja", "Desconocida"],
+                datasets: [{
+                    label: "Cantidad de Vulnerabilidades",
+                    data: [severities.HIGH, severities.MEDIUM, severities.LOW, severities.Unknown],
+                    backgroundColor: ["#ff3d67", "#ff9f40", "#36a2eb", "#6c757d"],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    }
+
+    // Renderizar los gráficos
+    renderVulnerabilitiesChart();
+    renderUnfixedChart();
+    renderSummaryChart();
+</script>
