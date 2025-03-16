@@ -16,7 +16,7 @@ Este proyecto implementa una **API REST** con **Django REST Framework** para la 
 ### 1️⃣ **Clonar el repositorio**
 ```bash
    git clone https://github.com/Andreslruiz/prueba-tecnica-emtelco.git
-   cd tu-repositorio
+   cd security_system
 ```
 
 ### 2️⃣ **Configurar variables de entorno**
